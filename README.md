@@ -1,2 +1,2 @@
 # LABS-DAE
-Laboratorios del curso de Desasrrollo de Sistemas Empresariales
+Laboratorios del curso de Desarrollo de Sistemas Empresariales
