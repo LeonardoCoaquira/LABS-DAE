@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ oper }}{% endblock %}
+
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+      Calculadora
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><span class="text-uppercase">{{ oper }}</span></h5>
+        <p class="card-text">De  {{ num1 }} y {{num2}} es </p>
+        <p>{{result}}</p>
+    </div>
+  </div>
+{% endblock %}
