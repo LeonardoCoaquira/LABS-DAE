@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cilindro.apps.CilindroConfig',
+    'calculadora.apps.CalculadoraConfig',
     'encuesta.apps.EncuestaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
