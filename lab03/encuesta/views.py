@@ -13,7 +13,7 @@ def index(request):
 def detalle(request,pregunta_id):
     pregunta = Pregunta.objects.get(pk=pregunta_id)
     context = {
-        'pregunta':pregunta
+        'pregunta': pregunta
     }
     
     return render(request,'encuesta/detalle.html',context)
@@ -24,6 +24,6 @@ def votar(request,pregunta_id):
     opcionSeleccionada.votos += 1
     opcionSeleccionada.save()
     context = {
-        'pregunta':pregunta
+        'pregunta': pregunta
     }
     return render(request,'encuesta/resultados.html',context)
