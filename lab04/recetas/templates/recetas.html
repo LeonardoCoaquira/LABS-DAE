@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recetas</title>
+</head>
+<body>
+    <h1>Recetas</h1>
+    <ul>
+    {% for receta in recetas %}
+        <li>
+            <h2>{{ receta.titulo }}</h2>
+            <p><strong>Ingredientes:</strong> {{ receta.ingredientes }}</p>
+            <p><strong>Preparación:</strong> {{ receta.preparacion }}</p>
+            <p><strong>Autor:</strong> {{ receta.autor.nombre }}</p>
+        </li>
+    {% empty %}
+        <li>No hay recetas disponibles.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
