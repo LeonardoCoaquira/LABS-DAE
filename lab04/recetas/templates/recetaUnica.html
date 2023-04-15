@@ -1,0 +1,30 @@
+<!-- templates/detalle_receta.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de Receta</title>
+</head>
+<body>
+    <h1>{{ receta.titulo }}</h1>
+    <h3>Ingredientes:</h3>
+    <p>{{ receta.ingredientes }}</p>
+    <h3>Preparación:</h3>
+    <p>{{ receta.preparacion }}</p>
+    <h3>Autor:</h3>
+    <p>{{ receta.autor.nombre }}</p>
+
+    <h2>Comentarios:</h2>
+    {% if comentarios %}
+        <ul>
+            {% for comentario in comentarios %}
+                <li>{{ comentario.texto }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay comentarios para esta receta.</p>
+    {% endif %}
+
+    <a href="{% url 'lista_recetas' %}">Volver a la lista de recetas</a>
+</body>
+</html>

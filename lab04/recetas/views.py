@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Receta
+from django.shortcuts import render, get_object_or_404
+from .models import Receta, Comentario
 
 # Create your views here.
 def lista_recetas(request):
@@ -10,4 +10,9 @@ def lista_recetas(request):
     context = {'recetas': recetas}
     
     # Renderizar la plantilla recetas.html con el contexto
-    return render(request, 'recetas.html', context)
+    return render(request, 'detalle_receta.html', context)
+
+def detalle_receta(request, pk):
+    receta = get_object_or_404(Receta, pk=pk)
+    comentarios = Comentario.objects.filter(receta=receta)
+    return render(request, 'recetaUnica.html', {'receta': receta, 'comentarios': comentarios})   
