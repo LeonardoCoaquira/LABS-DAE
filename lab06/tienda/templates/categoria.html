@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>{{ categoria.nombre }}</h1>
+{% for product in productos %}
+    <h2>{{product.nombre}}</h2>
+{% endfor %}
+{% endblock %}
