@@ -17,8 +17,14 @@ def producto(request, producto_id):
     return render(request,'producto.html',{'producto':producto,'categorias': categorias_list})
 
 def categoria(request, categoria_id):
-    categorias_list = Categoria.objects.all()
-    categoria = get_object_or_404(Categoria, pk=categoria_id)
-    productos = Producto.objects.filter(categoria_id=categoria_id)
-    context = {'categoria':categoria,'categorias': categorias_list, 'productos':productos}
-    return render(request, 'categoria.html',context)
+    categoria = Categoria.objects.get(pk=categoria_id)
+    lista_productos = categoria.producto_set.all()
+    lista_categorias = Categoria.objects.all()
+
+    context = {
+        'product_list':lista_productos,
+        'categorias':lista_categorias,
+        'categoria':categoria
+    }
+    
+    return render(request,'index.html',context)
